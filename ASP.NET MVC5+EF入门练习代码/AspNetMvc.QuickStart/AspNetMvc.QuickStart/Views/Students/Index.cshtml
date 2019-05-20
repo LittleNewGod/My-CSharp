@@ -1,0 +1,119 @@
+﻿@model IEnumerable<AspNetMvc.QuickStart.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+    @*@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+    <p>
+        所学专业: @Html.DropDownList("Major",
+ViewBag.MajorList as IEnumerable<SelectListItem>, "全部")
+        姓名: @Html.TextBox("Name")
+        <input type="submit" value="检索" />
+    </p>
+    }*@
+
+@using (Html.BeginForm("Index", "Students", FormMethod.Post, new { id = "searchForm" }))
+{
+    @Html.AntiForgeryToken()
+    <p>
+        所学专业: @Html.DropDownList("Major",
+ViewBag.MajorList as IEnumerable<SelectListItem>, "全部")
+        姓名: @Html.TextBox("Name")
+        <input type="hidden" id="PageIndex" name="PageIndex" value="0" />
+        <input type="button" id="searchButton" value="检索" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Major)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntranceDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Gender)*@
+            @if (item.Gender == 1)
+            {
+                @:男
+}
+            else
+            {
+                @:女
+}
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Major)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntranceDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+</table>
+
+<div id="pagebar">
+    @for (var i = 0; i < ViewBag.PageCount; i++)
+    {
+        if (i == ViewBag.PageIndex)
+        {
+            <span class="currentpagenumber">@(i + 1)</span>
+        }
+        else
+        {
+            <a class="pagenumber" href="javascript:;">@(i + 1)</a>
+        }
+    }
+</div>
+
+@section scripts {
+    <script>
+        function submitForm(pagenumber) {
+            pagenumber = parseInt(pagenumber, 10);
+            $('#PageIndex').val(pagenumber - 1);
+            $('#searchForm').submit();
+        }
+
+        $(function () {
+
+            $('#searchButton').click(function () {
+                submitForm($('#pagebar .currentpagenumber').text());
+            });
+
+            $('#pagebar .pagenumber').click(function () {
+                submitForm($(this).text());
+            });
+
+        });
+    </script>
+}
+
