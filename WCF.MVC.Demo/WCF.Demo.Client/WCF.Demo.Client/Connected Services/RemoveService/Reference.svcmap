@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="299afe2d-afa9-4893-a093-2ba1f05ec0da" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8002/WCF.Demo.Service/Remove.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Remove.xsd" MetadataType="Schema" ID="e75c8402-e058-4870-8d55-b100360f892b" SourceId="1" SourceUrl="http://localhost:8002/WCF.Demo.Service/Remove.svc?xsd=xsd0" />
+    <MetadataFile FileName="Remove.wsdl" MetadataType="Wsdl" ID="85ea8982-c58f-411b-bd46-e120d5026aa4" SourceId="1" SourceUrl="http://localhost:8002/WCF.Demo.Service/Remove.svc?wsdl" />
+    <MetadataFile FileName="Remove1.xsd" MetadataType="Schema" ID="30338c30-dd9c-4607-bbc0-9b65f4449037" SourceId="1" SourceUrl="http://localhost:8002/WCF.Demo.Service/Remove.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WCF.Demo.Client.GetService.User>
+
+@{
+    ViewBag.Title = "Get";
+}
+
+<h2>Get</h2>
+<p>
+    @Html.ActionLink("添加用户", "Add")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discribe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitTime)
+        </th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.UserID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Discribe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.SubmitTime)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Save", new { userid = item.UserID }) |
+                @Html.ActionLink("详情", "Search", new { userid = item.UserID }) |
+                @Html.ActionLink("删除", "Remove", new { userid = item.UserID })
+            </td>
+        </tr>
+    }
+</table>
+
+

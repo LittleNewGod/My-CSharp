@@ -1,0 +1,29 @@
+﻿@model WCF.Demo.Client.AddService.User
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(model => model.UserName)
+        @Html.EditorFor(model => model.UserName)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Password)
+        @Html.EditorFor(model => model.Password)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Discribe)
+        @Html.EditorFor(model => model.Discribe)
+    </div>
+        <div><input type="submit" value="添加" /></div>
+}
+
+<div>
+    @Html.ActionLink("回到列表页", "Get")
+</div>
+

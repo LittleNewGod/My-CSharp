@@ -1,0 +1,5 @@
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Model\bin\Debug\WCF.Demo.Model.dll
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Model\bin\Debug\WCF.Demo.Model.pdb
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Model\obj\Debug\WCF.Demo.Model.csprojResolveAssemblyReference.cache
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Model\obj\Debug\WCF.Demo.Model.dll
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Model\obj\Debug\WCF.Demo.Model.pdb

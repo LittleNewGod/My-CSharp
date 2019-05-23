@@ -1,0 +1,10 @@
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\bin\WCF.Demo.Service.dll.config
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\bin\WCF.Demo.Service.dll
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\bin\WCF.Demo.Service.pdb
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\bin\WCF.Demo.DAL.dll
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\bin\WCF.Demo.Model.dll
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\bin\WCF.Demo.DAL.pdb
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\bin\WCF.Demo.Model.pdb
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\obj\Debug\WCF.Demo.Service.csprojResolveAssemblyReference.cache
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\obj\Debug\WCF.Demo.Service.dll
+D:\Code_Template\c#\WCF.Demo.Service\WCF.Demo.Service\obj\Debug\WCF.Demo.Service.pdb
