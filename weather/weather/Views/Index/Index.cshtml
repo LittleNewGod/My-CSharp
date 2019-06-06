@@ -1,0 +1,222 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>七天预报</h2>
+<style>
+    .l-box {
+        width: 706px;
+        height: 245px;
+        float: left;
+        margin-right: 10px;
+        background-color: #fff;
+    }
+
+    .today-box {
+        float: left;
+        width: 223px;
+        height: 205px;
+        margin: 10px;
+        margin-top: 20px;
+        color: #fff;
+        background-color: #4EAFFF;
+        background-image: url(/Content/images/today-bg.png);
+        text-align: center;
+        font-weight: bold;
+    }
+
+        .today-box .city {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .today-box .date {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .today-box .pic {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .today-box .wd {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .today-box .tq {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+    .next-day-box {
+        float: left;
+        width: 440px;
+        height: 205px;
+        margin: 10px;
+        margin-top: 20px;
+    }
+
+    .next-day-weather {
+        float: left;
+        margin-left: 10px;
+        width: 60px;
+    }
+
+    .next-day-box .date {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .next-day-box .pic {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .next-day-box .zhou {
+        width: 100%;
+        padding-top: 15px;
+    }
+
+    .next-day-box .tq {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .next-day-box .wd {
+        width: 100%;
+        height: 25px;
+        font-size: 12px;
+    }
+</style>
+
+@section scripts
+{
+    <script>
+
+        $(function () {
+            //time：毫秒数
+            function formatDate(time, type) {
+                var date = new Date(time);
+                var month = date.getMonth() + 1;
+                var day = date.getDate() + "";
+                if (month.length == 1) {
+                    month = '0' + month;
+                }
+                if (day.length == 1) {
+                    day = '0' + day;
+                }
+                if (type == 1) {
+                    return date.getFullYear() + "-" + month + "-" + day;
+                } else if (type == 2) {
+                    return month + "月" + day + "日";
+                }
+            }
+            var cityid = "101010100";
+            $.ajax({
+                url:"https://www.tianqiapi.com/api/?version=v1&cityid=101010100",
+                type: "post",
+                //data: cityid,
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function (json) {
+                    //console.log(json);
+                    var data = json;
+                    var t = '<div class="today-box">'
+                        + '<div class="city" style="font-size:15px;">北京</div>'
+                        + '<div class="date">' + data.data[0].date + data.data[0].week + '</div>'
+                        + '<div class="pic"><img width="72px" height="72px;" src=' + getImageName(data.data[0].wea) + ' /> </div>'
+                        + '<div class="wd">' + data.data[0].tem2 + "-" + data.data[0].tem1  + '</div>'
+                        + '<div class="tq">' + data.data[0].wea + '&nbsp;' + data.data[0].win[0] + '</div>'
+                        + '</div>';
+                    t = t + '<div class="next-day-box">';
+                    for (var i = 1; i < data.data.length; i++) {
+                        t = t + '<div class="next-day-weather">'
+                            + '<div class="zhou">' + data.data[i].week + '</div>'
+                            + '<div class="date">' + formatDate(data.data[i].date, 2) + '</div>'
+                            + '<div class="pic"><img width="60px" height="60px;" src=' + getImageName(data.data[i].wea) + ' /> </div>'
+                            + '<div class="wd">' + data.data[i].tem2 + "-" + data.data[i].tem1  + '</div>'
+                            + '<div class="tq">' + data.data[i].wea + '</div>' + '</div>';
+                    }
+                    t = t + '</div>';
+                    $("#day7yb").html(t);
+                }
+            });
+
+            function getImageName(weather) {
+                if (weather.indexOf("雨夹雪") >= 0)
+                    return "/Content/images/bingyu.png";
+                if (weather.indexOf("雷阵雨") >= 0)
+                    return "/Content/images/leizhenyu.png";
+                if (weather.indexOf("雷阵雨伴冰雹") >= 0)
+                    return "/Content/images/lzybybb.png";
+                if (weather.indexOf("晴到多云") >= 0)
+                    return "/Content/images/cloud.png";
+                if (weather.indexOf("暴雪") >= 0)
+                    return "/Content/images/baoxue.png";
+                if (weather.indexOf("暴雨") >= 0)
+                    return "/Content/images/baoyu.png";
+                if (weather.indexOf("暴雨到大暴雨") >= 0)
+                    return "/Content/images/dabaoyu.png";
+                if (weather.indexOf("大暴雨") >= 0)
+                    return "/Content/images/dabaoyu.png";
+                if (weather.indexOf("大暴雨到特大暴雨") >= 0)
+                    return "/Content/images/dabaoyu.png";
+                if (weather.indexOf("大雪") >= 0)
+                    return "/Content/images/daxue.png";
+                if (weather.indexOf("大雪到暴雪") >= 0)
+                    return "/Content/images/daxue.png";
+                if (weather.indexOf("中雨") >= 0)
+                    return "/Content/images/zhongyu.png";
+                if (weather.indexOf("中雨到大雨") >= 0)
+                    return "/Content/images/dayu.png";
+                if (weather.indexOf("中雪") >= 0)
+                    return "/Content/images/zhongxue.png";
+                if (weather.indexOf("中雪到大雪") >= 0)
+                    return "/Content/images/zhongxue.png";
+                if (weather.indexOf("冻雨") >= 0)
+                    return "/Content/images/bingyu.png";
+                if (weather.indexOf("多云") >= 0)
+                    return "/Content/images/yin.png";
+                if (weather.indexOf("大雨") >= 0)
+                    return "/Content/images/dayu.png";
+                if (weather.indexOf("大雨到暴雨") >= 0)
+                    return "/Content/images/baoyu.png";
+                if (weather.indexOf("小雨") >= 0)
+                    return "/Content/images/xiaoyu.png";
+                if (weather.indexOf("小雨到中雨") >= 0)
+                    return "/Content/images/xiaoyu.png";
+                if (weather.indexOf("小雪") >= 0)
+                    return "/Content/images/xiaoxue.png";
+                if (weather.indexOf("小雪到中雪") >= 0)
+                    return "/Content/images/xiaoxue.png";
+                if (weather.indexOf("强沙尘暴") >= 0)
+                    return "/Content/images/qiangshachenbao.png";
+                if (weather.indexOf("扬沙") >= 0)
+                    return "/Content/images/yangsha.png";
+                if (weather.indexOf("晴") >= 0)
+                    return "/Content/images/sun.png";
+                if (weather.indexOf("沙尘暴") >= 0)
+                    return "/Content/images/shachengbao.png";
+                if (weather.indexOf("浮尘") >= 0)
+                    return "/Content/images/fuchen.png";
+                if (weather.indexOf("特大暴雨") >= 0)
+                    return "/Content/images/tedabaoyu.png";
+                if (weather.indexOf("阴") >= 0)
+                    return "/Content/images/yin.png";
+                if (weather.indexOf("阵雨") >= 0)
+                    return "/Content/images/zhenyu.png";
+                if (weather.indexOf("阵雪") >= 0)
+                    return "/Content/images/zhenxue.png";
+                if (weather.indexOf("雾") >= 0)
+                    return "/Content/images/wu.png";
+            }
+        });
+</script>
+    }
+
+
+<div id="day7yb" class="l-box"></div>
+

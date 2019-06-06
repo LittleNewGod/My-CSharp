@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "WeatherForJson";
+}
+
+<h2>WeatherForJson</h2>
+
+<div>
+    @using (Html.BeginForm("WeatherForJson", "Index", FormMethod.Post))
+    {
+    <p>城市：@Html.TextBox("city")</p>
+    <input type="submit" value="搜索" />
+    }
+</div>
+
