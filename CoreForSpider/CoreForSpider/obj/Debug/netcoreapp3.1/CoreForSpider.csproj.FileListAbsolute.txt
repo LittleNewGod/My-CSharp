@@ -1,0 +1,14 @@
+D:\Code\Test\CoreForSpider\CoreForSpider\bin\Debug\netcoreapp3.1\CoreForSpider.exe
+D:\Code\Test\CoreForSpider\CoreForSpider\bin\Debug\netcoreapp3.1\CoreForSpider.deps.json
+D:\Code\Test\CoreForSpider\CoreForSpider\bin\Debug\netcoreapp3.1\CoreForSpider.runtimeconfig.json
+D:\Code\Test\CoreForSpider\CoreForSpider\bin\Debug\netcoreapp3.1\CoreForSpider.runtimeconfig.dev.json
+D:\Code\Test\CoreForSpider\CoreForSpider\bin\Debug\netcoreapp3.1\CoreForSpider.dll
+D:\Code\Test\CoreForSpider\CoreForSpider\bin\Debug\netcoreapp3.1\CoreForSpider.pdb
+D:\Code\Test\CoreForSpider\CoreForSpider\obj\Debug\netcoreapp3.1\CoreForSpider.csprojAssemblyReference.cache
+D:\Code\Test\CoreForSpider\CoreForSpider\obj\Debug\netcoreapp3.1\CoreForSpider.AssemblyInfoInputs.cache
+D:\Code\Test\CoreForSpider\CoreForSpider\obj\Debug\netcoreapp3.1\CoreForSpider.AssemblyInfo.cs
+D:\Code\Test\CoreForSpider\CoreForSpider\obj\Debug\netcoreapp3.1\CoreForSpider.dll
+D:\Code\Test\CoreForSpider\CoreForSpider\obj\Debug\netcoreapp3.1\CoreForSpider.pdb
+D:\Code\Test\CoreForSpider\CoreForSpider\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
+D:\Code\Test\CoreForSpider\CoreForSpider\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+D:\Code\Test\CoreForSpider\CoreForSpider\obj\Debug\netcoreapp3.1\CoreForSpider.csproj.CopyComplete
